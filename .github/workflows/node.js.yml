@@ -1,0 +1,15 @@
+name: React build
+on:
+ push: # master Branch에서 push 이벤트가 일어났을 때만 실행
+ branches:
+ - master
+jobs:
+ build:
+  runs-on:ubuntu-latest
+  steps:
+   - name: Checkout source code.
+    uses: action/checkout@master
+   - name: Install Dependencies
+    run: npm install
+   - name: Build
+    run: npm run build
